@@ -2,5 +2,6 @@
 
 provider "google" {
   project     = "nodejs-mongodb-webapplication"
-  region      = "us-central1"
+  region      = "	us-central1"
+  credentials = "nodejs-mongodb-webapplication-199b36b7390c.json"
 }
