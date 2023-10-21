@@ -20,3 +20,15 @@ resource "google_project_iam_member" "artifact-role" {
   role    = "roles/artifactregistry.repoAdmin"
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
+
+resource "google_project_iam_member" "vm-containerAdmin" {
+  project = "nodejs-mongodb-webapplication"
+  role    = "roles/container.admin"
+  member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
+}
+
+resource "google_project_iam_member" "vm-artifactAdmin" {
+  project = "nodejs-mongodb-webapplication"
+  role    = "roles/artifactregistery.writer"
+  member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
+}
