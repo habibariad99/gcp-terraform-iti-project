@@ -4,31 +4,26 @@ resource "google_service_account" "private-serviceaccount" {
 
 #grant access 
 resource "google_project_iam_member" "gke-role" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/container.clusterViewer"
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "admin-role" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/container.clusterAdmin"
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "artifact-role" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/artifactregistry.repoAdmin"
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "vm-containerAdmin" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/container.admin"
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
 
-resource "google_project_iam_member" "vm-artifactAdmin" {
-  project = "nodejs-mongodb-webapplication"
-  role    = "roles/artifactregistery.writer"
-  member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
-}

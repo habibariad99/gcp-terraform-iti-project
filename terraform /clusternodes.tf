@@ -1,6 +1,6 @@
 resource "google_container_node_pool" "primary_node" {
  name       = "my-primary-node"
- location   = "us-east1"
+ location   = "us-central1"
  node_count = 1
  cluster    = google_container_cluster.gke-cluster.name
 

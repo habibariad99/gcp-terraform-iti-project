@@ -8,31 +8,31 @@ resource "google_project_iam_member" "gke-logWriter" {
 }
 
 resource "google_project_iam_member" "service_account_with-gke-metricWriter" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/monitoring.metricWriter"
   member  = "serviceAccount:${google_service_account.gke-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "gke-role-viewer" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/monitoring.viewer"
   member  = "serviceAccount:${google_service_account.gke-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "gke-role-Metadata" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/stackdriver.resourceMetadata.writer"
   member  = "serviceAccount:${google_service_account.gke-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "gke-role-metricsWriter" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/autoscaling.metricsWriter"
   member  = "serviceAccount:${google_service_account.gke-serviceaccount.email}"
 }
 
 resource "google_project_iam_member" "gke-role-reader" {
-  project = "nodejs-mongodb-webapplication"
+  project = "gcp-kubernetes-project"
   role    = "roles/artifactregistry.reader"
   member  = "serviceAccount:${google_service_account.gke-serviceaccount.email}"
 }

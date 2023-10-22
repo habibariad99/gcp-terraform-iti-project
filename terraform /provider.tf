@@ -1,7 +1,7 @@
 #hena b3ml setting lel provider w region 
 
 provider "google" {
-  project     = "nodejs-mongodb-webapplication"
-  region      = "	us-central1"
-  credentials = "nodejs-mongodb-webapplication-199b36b7390c.json"
+  project     = "gcp-kubernetes-project-402813"
+  region      = "us-east1"
+  credentials = "/home/kimo/Downloads/kubernetes-project-402813-07066bdd307c.json"
 }
