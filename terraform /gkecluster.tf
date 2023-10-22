@@ -2,6 +2,7 @@
 resource "google_container_cluster" "gke-cluster" { 
   name     = "gke-cluster"
   location = "us-central1"
+ 
   #will create 1 node in each zone 
   initial_node_count = 1
   deletion_protection= false

@@ -3,5 +3,5 @@
 provider "google" {
   project     = "gcp-kubernetes-project-402813"
   region      = "us-east1"
-  credentials = "/home/kimo/Downloads/kubernetes-project-402813-07066bdd307c.json"
+  credentials = file("/home/kimo/Downloads/kubernetes-project-402813-07066bdd307c.json")
 }
