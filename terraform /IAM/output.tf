@@ -1,4 +1,4 @@
-output "vm_service_account" {
+output "private-serviceaccount" {
   value =google_service_account.private-serviceaccount.email
 }
 

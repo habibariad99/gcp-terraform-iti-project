@@ -73,7 +73,7 @@ variable "project_id" {
   type = string
 }
 
-variable "vm_service_account" {
+variable "private-serviceaccount" {
   type = string
 }
 

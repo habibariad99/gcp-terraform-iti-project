@@ -8,6 +8,10 @@ variable "node_count" {
   type = number
 }
 
+variable "private-serviceaccount" {
+  type = string
+}
+
 variable "node_disk_size_gb" {
   type = number
 }

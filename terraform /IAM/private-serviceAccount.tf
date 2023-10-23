@@ -28,3 +28,8 @@ resource "google_project_iam_member" "vm-containerAdmin" {
   member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
 }
 
+resource "google_project_iam_member" "service_account_with-token-role" {
+  project = var.project_id
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:${google_service_account.private-serviceaccount.email}"
+}

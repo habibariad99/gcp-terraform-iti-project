@@ -33,12 +33,12 @@ module "IAM" {
  
   source = "./IAM"
   project_id = var.project_id
-  vm_service_account= var.vm_service_account
+  private-serviceaccount= var.private-serviceaccount
   gke_cluster_service_account = var.gke_cluster_service_account
 }
 
 module "Compute" {
-  
+
   source = "./Compute"
   cluster_name = var.cluster_name
   vpc= module.Network.vpc.name
@@ -52,7 +52,8 @@ module "Compute" {
   deletion_protection= var.deletion_protection
   gke_subnet = module.Network.public_subnet_name
   gke_cluster_service_account= module.IAM.gke_cluster_service_account
-  vm_service_account = module.IAM.vm_service_account
+  vm_service_account = module.IAM.private-serviceaccount
+  private-serviceaccount=module.IAM.private-serviceaccount
   gke_master_ipv4_cidr_block = var.gke_master_ipv4_cidr_block
   vm_name = var.vm_name
   enable_private_nodes = var.enable_private_nodes
