@@ -1,6 +1,11 @@
 variable "cluster_name" {
   type = string
 }
+variable "node_pool_locations" {
+  type           = list(string)
+  description    = "node_pool_locations"
+  default        = ["us-central1-a","us-central1-b","us-central1-c"]
+}
 variable "node_name" {
   type = string 
 }

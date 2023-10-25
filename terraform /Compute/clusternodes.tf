@@ -1,6 +1,7 @@
-resource "google_container_node_pool" "primary-node" {
+resource "google_container_node_pool" "primayry-node" {
  name       = var.node_name                               #"my-primary-node"
- location   =  var.node_location                          #"us-central1"
+ location   =  var.node_location   
+ node_locations =  var.node_pool_locations                  #"us-central1"
  node_count = var.node_count                              #1
 
  cluster    =  var.cluster_name                     #google_container_cluster.gke-cluster.name

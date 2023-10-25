@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-deployment
+  name: nodejsd
 spec:
   selector:
     matchLabels:
-      app: nodejs-app
+      app: nodejs
   replicas: 3
   strategy:
   template:
     metadata:
       labels:
-        app: nodejs-app
+        app: nodejs
     spec:
       containers:
-       —name: nodejs-app
-          image: us-central1-docker.pkg.dev/gcp-kubernetes-project-402813/my-repository
+       —name: nodejs
+          image: us-central1-docker.pkg.dev/gcp-kubernetes-project-402813/my-repository/nodejs
           ports:
            —containerPort: 3000
             protocol: TCP
