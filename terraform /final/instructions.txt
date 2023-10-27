@@ -1,0 +1,22 @@
+1- install docker
+2- auth docker
+
+3- install plugins gcp gke and kubectl
+4- auth gke cluster
+
+5- download mongo bitnami image
+6- tag image and push to registry
+
+7- apply mongo replica kubernetes file
+
+8- make sure nodejs files is present
+
+9- build nodejs image using our app files using dockerfile
+
+10- access application using loadbalancer service
+
+10- push nodejs docker image to registry
+
+11- deploy to the nodejs kubernetes deployment
+
+12- test statefulset
